@@ -21,8 +21,8 @@
     <div class="col-sm-10 col-sm-offset-1">
       
       <div ng-controller="estevezController as ctrl">
-        <p>{{ctrl.currentJoke.setup}}</p>
-        <p ng-show="ctrl.showPunchline"> {{ctrl.currentJoke.punchline}}</p>
+        <p class="ng-cloak">{{ctrl.currentJoke.setup}}</p>
+        <p ng-show="ctrl.showPunchline" class="ng-cloak"> {{ctrl.currentJoke.punchline}}</p>
         <button ng-click="ctrl.showPunchline = true">What?</button>
         <hr>
         <p><a href="#" ng-click="ctrl.getJoke()">hahaha, another one!</a></p>
