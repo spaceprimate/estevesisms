@@ -29,12 +29,14 @@ app.controller('estevezController', ['$http', function($http){
 
 
 	this.currentJoke = {};
+	this.jokeNum = 0;
 
 	this.getJoke = function(){
 		this.showPunchline = false;
 		var numJokes = jokes.jokes.length;
 		var randJoke = getRandomInt(0, numJokes);
 		this.currentJoke = jokes.jokes[randJoke];
+		this.jokeNum = randJoke + 1;
 		this.updateBg();
 	};
 

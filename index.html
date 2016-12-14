@@ -17,17 +17,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-2">
+    <div class="col-md-2 hidden-sm hidden-xs">
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     </div>
-    <div class="col-sm-8 main">
+    <div class="col-md-8 main">
     	<div class="content">
       
 		      <div ng-controller="estevezController as ctrl" class="ng-cloak text-center">
+		      	<h4>#{{ctrl.jokeNum}}</h4>
 		        <h3>{{ctrl.currentJoke.setup}}</h3>
 		        <div class="punchline">
 		        	<h1 ng-show="ctrl.showPunchline" > {{ctrl.currentJoke.punchline}}</h1>
@@ -37,13 +38,13 @@
 		        	What?
 		        </button></p>
 		        
-		        <p ng-show="ctrl.showPunchline"><button ng-click="ctrl.getJoke()" class="btn-warning btn btn-lg" >ANOTHER!</button></p>
+		        <p ng-show="ctrl.showPunchline"><button ng-click="ctrl.getJoke()" class="btn-warning btn btn-lg" >ANOTHER</button></p>
 
 		        
 		      </div>
       	</div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-md-2 right-column">
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
     	<a href="img/emilio.jpg"><img src="img/emilio.jpg" style="width: 100%;"></a>
