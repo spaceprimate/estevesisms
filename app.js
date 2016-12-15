@@ -27,17 +27,35 @@ app.controller('estevezController', ['$http', function($http){
 		jokes.getJoke();
 	});
 
+	this.reloadButton;
+
+	this.reload = () => {
+		window.location.reload(true);
+	};
+
 
 	this.currentJoke = {};
 	this.jokeNum = 0;
 
 	this.getJoke = function(){
-		this.showPunchline = false;
-		var numJokes = jokes.jokes.length;
-		var randJoke = getRandomInt(0, numJokes);
-		this.currentJoke = jokes.jokes[randJoke];
-		this.jokeNum = randJoke + 1;
-		this.updateBg();
+		if (jokes.jokes.length == 0){
+			this.showPunchline = false;
+			this.currentJoke = {"setup": "Congratulations, you just read 100+ true facts about Emilio Estevez. What now?", "punchline": "Go to bed? Or reload the page and start over!"};
+			this.updateBg();
+			this.reloadButton = true;
+		}
+		else{
+			this.showPunchline = false;
+			var numJokes = jokes.jokes.length;
+			var randJoke = getRandomInt(0, numJokes);
+			this.currentJoke = jokes.jokes[randJoke];
+			this.jokeNum = randJoke + 1;
+			//array.splice(index, 1);
+			jokes.jokes.splice(randJoke, 1);
+			this.updateBg();
+			this.reloadButton = undefined;
+		}
+		
 	};
 
 	//init

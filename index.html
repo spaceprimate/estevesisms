@@ -28,7 +28,7 @@
     	<div class="content">
       
 		      <div ng-controller="estevezController as ctrl" class="ng-cloak text-center">
-		      	<h4>#{{ctrl.jokeNum}}</h4>
+		      	<h4>#{{ctrl.currentJoke.id}}</h4>
 		        <h3>{{ctrl.currentJoke.setup}}</h3>
 		        <div class="punchline">
 		        	<h1 ng-show="ctrl.showPunchline" > {{ctrl.currentJoke.punchline}}</h1>
@@ -38,7 +38,8 @@
 		        	What?
 		        </button></p>
 		        
-		        <p ng-show="ctrl.showPunchline"><button ng-click="ctrl.getJoke()" class="btn-warning btn btn-lg" >ANOTHER</button></p>
+		        <p ng-show="ctrl.showPunchline" ><button ng-click="ctrl.getJoke()" class="btn-warning btn btn-lg" >ANOTHER</button></p>
+		        <p ng-show="ctrl.reloadButton"><button ng-click="ctrl.reload()" class="btn-warning btn btn-xl">RELOAD</button></p>
 
 		        
 		      </div>
